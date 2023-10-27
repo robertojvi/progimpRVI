@@ -193,3 +193,57 @@ function abrirParacaidas(){
 
 // console.log(abrirParacaidas());
 
+//Traductor
+
+function traductor(){
+  let palabra = prompt("Ingresa una palabra casa, perro, pelota, árbol, genio...:") 
+  switch (palabra) {
+    case "casa":
+      return "house"
+      break;
+    case "perro":
+      return "dog"
+      break;
+    case "pelota":
+      return "ball"
+      break;
+    case "árbol":
+      return "tree"
+      break;
+    case "genio":
+      return "genius"
+      break;
+    default:
+      return "La palabra ingresada es incorrecta"
+      break;
+  }
+}
+
+// console.log(traductor());
+
+//Valoración Películas
+function valoraPeli(){
+  let valoracion = prompt("Valora la peli que acabas de ver: (Muy mala, Mala, Mediocre, Buena, Muy Buena)")
+  switch (valoracion) {
+    case "Muy mala":
+      return "Calificaste la película como Muy mala. Lo lamentamos mucho. Gracias por tu valoración."
+      break;
+    case "Mala":
+      return "Calificaste la película como Mala. Lo lamentamos mucho. Gracias por tu valoración."
+      break;
+    case "Mediocre":
+      return "Calificaste la película como Mediocre. Lo lamentamos mucho. Gracias por tu valoración."
+      break;
+    case "Buena":
+      return "Calificaste la película como Buena. Gracias por tu valoración."
+      break;
+    case "Muy buena":
+      return "Calificaste la película como Muy buena. Lo agradecemos. Gracias por tu valoración."
+      break;
+    default:
+      return "Ingresaste un valor inválido"
+      break;
+  }
+}
+
+// console.log(valoraPeli());
