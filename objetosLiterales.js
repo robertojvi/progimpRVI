@@ -43,19 +43,44 @@ let banco = {
         }
     },
     deposito: function (titular, cantidadDinero) {
-        this.consultarCliente(titular).saldoEnPesos += cantidadDinero
-        console.log(`Depósito realizado, su nuevo saldo es: ${this.consultarCliente(titular).saldoEnPesos}`);
+        this.consultarCliente(titular).saldoEnPesos += cantidadDinero;
+        console.log(
+            `Depósito realizado, su nuevo saldo es: ${this.consultarCliente(titular).saldoEnPesos
+            }`
+        );
     },
-    extraccion: function (titular, montoAExtraer){
+    extraccion: function (titular, montoAExtraer) {
         if (this.consultarCliente(titular).saldoEnPesos > montoAExtraer) {
-            this.consultarCliente(titular).saldoEnPesos -= montoAExtraer
-            console.log(`Extracción realizada correctamente, su nuevo saldo es: ${this.consultarCliente(titular).saldoEnPesos}`);
+            this.consultarCliente(titular).saldoEnPesos -= montoAExtraer;
+            console.log(
+                `Extracción realizada correctamente, su nuevo saldo es: ${this.consultarCliente(titular).saldoEnPesos
+                }`
+            );
         } else {
             console.log("Fondos insuficientes");
         }
-    }
+    },
 };
 
 //console.log(banco.consultarCliente("Ansel Ardley"));
 banco.deposito("Jacki Shurmer", 10000000);
 banco.extraccion("Jacki Shurmer", 10000000);
+
+function propiedadUnica(arr, propiedad) {
+    const resultado = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        const objeto = {};
+        objeto[propiedad] = arr[i][propiedad];
+        resultado.push(objeto);
+    }
+
+    return resultado;
+}
+let array = [ { nombre: "Lean", edad: 27 }, { nombre: "Eze", edad: 49 } ];
+
+const resultadoEdad = propiedadUnica(array, "edad");
+console.log(resultadoEdad); // Debería mostrar: [ { edad: 27 }, { edad: 49 } ]
+
+const resultadoNombre = propiedadUnica(array, "nombre");
+console.log(resultadoNombre); // Debería mostrar: [ { nombre: "Lean" }, { nombre: "Eze" } ]
