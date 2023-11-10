@@ -84,3 +84,24 @@ console.log(resultadoEdad); // Debería mostrar: [ { edad: 27 }, { edad: 49 } ]
 
 const resultadoNombre = propiedadUnica(array, "nombre");
 console.log(resultadoNombre); // Debería mostrar: [ { nombre: "Lean" }, { nombre: "Eze" } ]
+
+
+// revisar
+let alumno = {
+    nombre: "",
+    numeroLegajo: 0,
+    listaNotas: [],
+    promedio: function(){
+        let acc = 0
+        for (let i = 0; i < array.length; i++) {
+            acc += this.listaNotas[i];
+        }
+        return acc / this.listaNotas.length
+    },
+    aprueba: function(notaAprobacion){
+        if (this.promedio > notaAprobacion) {
+            return console.log(`El alumno ${this.nombre} ha aprobado con ${this.promedio}`);
+            
+        }
+    }
+}
