@@ -91,4 +91,4 @@ let palindromo = (palabra) => {
     return indicador
 }
 
-// console.log(palindromo("ana"));
+console.log(palindromo("enrique"));

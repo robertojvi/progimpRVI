@@ -37,10 +37,11 @@ let banco = {
     clientes: arrayCuentas,
     consultarCliente: function (titular) {
         for (let i = 0; i < this.clientes.length; i++) {
-            if (this.clientes[i].titularCuenta) {
+            if (this.clientes[i].titularCuenta === titular) {
                 return this.clientes[i];
             }
         }
+        return `Lo siento, el cliente ${titular} no está registrado.`
     },
     deposito: function (titular, cantidadDinero) {
         this.consultarCliente(titular).saldoEnPesos += cantidadDinero;
