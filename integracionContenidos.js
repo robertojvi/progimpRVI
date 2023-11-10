@@ -80,15 +80,7 @@ let palindromo = (palabra) => {
     for (let index = palabra.length - 1; index >= 0; index--) {
         arregloInvertido.push(palabra[index]);
     }
-    console.log(arregloPalabra)
-    console.log(arregloInvertido)
-    let indicador = true
-    for (let i = 0; i < arregloPalabra.length; i++) {
-        if (arregloPalabra[i] != arregloInvertido[i] ) {
-            indicador = false
-        } 
-    }
-    return indicador
+    return arregloPalabra.join("") === arregloInvertido.join("")
 }
 
-console.log(palindromo("enrique"));
+console.log(palindromo("ana"));
