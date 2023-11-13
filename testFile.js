@@ -16,3 +16,23 @@ let enteroABinario = (numero) => {
     return binario.reverse().join("")
 }
 
+// Función que valida un correo electrónico
+let validateEmail = (email) => {
+    let emailValido = false
+    for (let index = 0; index < email.length; index++) {
+        if (email[index] === "@") {
+            emailValido = true
+        }
+    }
+    return emailValido
+}
+
+// Función para generar una contrasena aleatoria
+let contrasenaAleatoria = (longitud) => {
+    let contrasena = [] // arreglo vacía
+    let caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+    for (let index = 0; index < longitud; index++) {
+        contrasena.push(caracteres.charAt(Math.floor(Math.random() * caracteres.length)))
+    }
+    return contrasena.join("")  
+}
