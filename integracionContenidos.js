@@ -83,4 +83,28 @@ let palindromo = (palabra) => {
     return arregloPalabra.join("") === arregloInvertido.join("")
 }
 
-console.log(palindromo("ana"));
+// console.log(palindromo("ana"));
+
+// Array inverter
+
+let arrayInvertido = (arreglo) => {
+    let arregloInvertido = []
+    for (let index = arreglo.length - 1; index >= 0; index--) {
+        arregloInvertido.push(arreglo[index]);
+    }
+    return arregloInvertido
+}
+console.log(arrayInvertido([1,2,3,4]));
+
+
+// function to calculate the factorial of a number
+
+let factorial = (numero) => {
+    let factorial = 1
+    for (let index = 1; index <= numero; index++) {
+        factorial *= index
+    }
+    return factorial 
+}
+
+// console.log(factorial(5))    
