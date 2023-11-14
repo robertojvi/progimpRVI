@@ -248,7 +248,7 @@ let cuentasEdadMenor30 = (array) => {
     return edadesMenor30;
 }
 
-console.log(cuentasEdadMenor30(arrayCuentas));
+// console.log(cuentasEdadMenor30(arrayCuentas));
 
 // Obtener un nuevo array de cuentas cuyas edades sean mayor o igual a 30
 
@@ -262,7 +262,7 @@ let cuentasEdadMayor30 = (array) => {
     return edadesMayor30;
 }
 
-console.log(cuentasEdadMayor30(arrayCuentas));
+// console.log(cuentasEdadMayor30(arrayCuentas));
 
 // Obtener un nuevo array de cuentas cuyas edades sean menores o igual a 30
 
@@ -276,7 +276,7 @@ let cuentasEdadMenorIgual30 = (array) => {
     return cuentasMenorIgual30
 }
 
-console.log(cuentasEdadMenorIgual30(arrayCuentas));
+// console.log(cuentasEdadMenorIgual30(arrayCuentas));
 
 // Obtener la cuenta con el titular de la misma más joven.
 
@@ -290,7 +290,7 @@ let cuentaTitularMasJoven = (array) => {
     return cuentaMasJoven;
 }
 
-console.log(cuentaTitularMasJoven(arrayCuentas));
+// console.log(cuentaTitularMasJoven(arrayCuentas));
 
 // Obtener un array con las cuentas habilitadas 
 
@@ -304,7 +304,7 @@ let cuentasHabilitadas = (array) => {
     return habilitadas;
 }
 
-console.log(cuentasHabilitadas(arrayCuentas));
+// console.log(cuentasHabilitadas(arrayCuentas));
 
 // Obtener un array con las cuentas deshabilitadas 
 
@@ -318,7 +318,7 @@ let cuentasDeshabilitadas = (array) => {
     return deshabilitadas;
 }
 
-console.log(cuentasDeshabilitadas(arrayCuentas));
+// console.log(cuentasDeshabilitadas(arrayCuentas));
 
 
 // Obtener la cuenta con el menor saldo
@@ -332,7 +332,7 @@ let cuentaMenorSaldo = (array) => {
     }
     return menorSaldo;
 }
-console.log(cuentaMenorSaldo(arrayCuentas));
+// console.log(cuentaMenorSaldo(arrayCuentas));
 
 
 // Obtener la cuenta con el mayor saldo
@@ -346,7 +346,7 @@ let cuentaMayorSaldo = (array) => {
     }
     return mayorSaldo;
 }
-console.log(cuentaMayorSaldo(arrayCuentas));
+// console.log(cuentaMayorSaldo(arrayCuentas));
 
 // obtener el promedio de las cuentas
 
@@ -358,4 +358,65 @@ let promedioCuentas = (array) => {
     return suma / array.length;
 }
 console.log(promedioCuentas(arrayCuentas));
+
+// Desarrollar una función llamada generarID que reciba como parámetro el array de cuentas y 
+//agregue a cada elemento (objeto literal) una propiedad llamada id con un valor Numérico
+
+let generarID = (array) => {
+    for (let i = 0; i < array.length; i++) {
+        array[i].id = i + 1
+    }
+}
+
+console.log(generarID(arrayCuentas));
+
+
+// Desarrollar una función llamada buscarPorId que reciba como parámetro el array de cuentas 
+// y un id, en caso de encontrar retornar la cuenta (él objeto literal completo), 
+// caso contrario retornar null
+
+let buscarPorId = (array, id) => {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].id === id) {
+            return array[i];
+        }
+    }
+    return null
+}
+
+console.log(buscarPorId(arrayCuentas, 4));
+
+// Desarrollar una función llamada filtrarPorSaldos que reciba como parámetro el array de cuentas 
+// y un saldo (Number), deberá retornar un array que se cuyas cuentas se encuentren por debajo del 
+// saldo enviado por parámetro
+
+let filtrarPorSaldos = (array, saldo) => {
+    let cuentasDebajoSaldo = []
+    for (let index = 0; index < array.length; index++) {
+        if (array[index].saldo < saldo) {
+            cuentasDebajoSaldo.push(array[index]);
+        }   
+    }
+    return cuentasDebajoSaldo
+}
+
+console.log(filtrarPorSaldos(arrayCuentas, 10000));
+
+
+// Desarrollar una función llamada incrementarSaldo que reciba como parámetro el array de cuentas, 
+// un id y un saldo, deberá incrementar él saldo de la cuenta, en caso de encontrar, 
+// caso contrario retornar undefined 
+// Reutilizando la función  buscarPorId 
+
+let incrementarSaldo = (array, id, saldo) => {
+    let cuenta = buscarPorId(array, id)
+    if (cuenta !== null) {
+        cuenta.saldo += saldo
+        return cuenta
+    } else {
+        return undefined
+    }
+}
+
+console.log(incrementarSaldo(arrayCuentas, 4, 10000));
 
