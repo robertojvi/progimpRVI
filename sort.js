@@ -37,3 +37,4 @@ let ordenar = (personas) => {
 
 ordenar(personas);
 console.log(personas);
+
